@@ -1,0 +1,19 @@
+﻿using Project.GameObjects;
+using Project.Items;
+
+
+namespace Project.Collision
+{
+    public class PlayerItemCollisionHandler : AbstractCollisionHandler
+    {
+        public PlayerItemCollisionHandler()
+        {
+            collisionResolutionMap.Add((typeof(IPlayer), typeof(BrownMushroom)), typeof(PlayerBrownMushroomCollisionResolution));
+            collisionResolutionMap.Add((typeof(IPlayer), typeof(StaticCoin)), typeof(PlayerCoinCollisionResolution));
+            collisionResolutionMap.Add((typeof(IPlayer), typeof(Flower)), typeof(PlayerFlowerCollisionResolution));
+            collisionResolutionMap.Add((typeof(IPlayer), typeof(SpeedBoostItem)), typeof(PlayerSpeedBoostItemResolution));
+            collisionResolutionMap.Add((typeof(IPlayer), typeof(Star)), typeof(PlayerStarCollisionResolution));
+            collisionResolutionMap.Add((typeof(IPlayer), typeof(PushableBlock)), typeof(PlayerPushableBlockCollisionResolution));
+        }
+    }
+}

@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BDF0978-9B27-469C-AA1B-F53478D5C254}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Project</RootNamespace>
+    <AssemblyName>Project</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <MonoGameContentReference Include="Content\Content.mgcb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </MonoGameContentReference>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.7.1.189, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\lib\net45\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackgroundElements\BackgroundElement.cs" />
+    <Compile Include="BackgroundElements\IBackgroundElement.cs" />
+    <Compile Include="Blocks\AbstractBlock.cs" />
+    <Compile Include="Blocks\BlockStates\BrownMushroomState.cs" />
+    <Compile Include="Blocks\BlockStates\CoinState.cs" />
+    <Compile Include="Blocks\BlockStates\EmptyItemState.cs" />
+    <Compile Include="Blocks\BlockStates\FlowerState.cs" />
+    <Compile Include="Blocks\BlockStates\GreenMushroomStates.cs" />
+    <Compile Include="Blocks\BlockStates\IItemState.cs" />
+    <Compile Include="Blocks\BlockStates\AbstractItemState.cs" />
+    <Compile Include="Blocks\BlockStates\StarState.cs" />
+    <Compile Include="Blocks\BrickBlockFolder\NormalBrickBlock.cs" />
+    <Compile Include="Blocks\BrickBlockFolder\CoinBrickBlock.cs" />
+    <Compile Include="Blocks\BrickBlockFolder\StarBrickBlock.cs" />
+    <Compile Include="Blocks\BlockStates\BumpState.cs" />
+    <Compile Include="Blocks\GroundBlockFolder\UndergroundBlock.cs" />
+    <Compile Include="Blocks\BrickBlockFolder\UndergroundBrickBlock.cs" />
+    <Compile Include="Blocks\GroundBlockFolder\GroundBlock.cs" />
+    <Compile Include="Blocks\BlockStates\EndBumpState.cs" />
+    <Compile Include="Blocks\IBlock.cs" />
+    <Compile Include="Blocks\BlockStates\IBumpState.cs" />
+    <Compile Include="Blocks\InvisibleBlockFolder\ExtraLifeInvisibleBlock.cs" />
+    <Compile Include="Blocks\InvisibleBlockFolder\InvisibleBlock.cs" />
+    <Compile Include="Blocks\InvisibleBlockFolder\PowerUpInvisibleBlock.cs" />
+    <Compile Include="Blocks\QuestionBlockFolder\CoinQuestionBlock.cs" />
+    <Compile Include="Blocks\QuestionBlockFolder\FlowerQuestionBlock.cs" />
+    <Compile Include="Blocks\QuestionBlockFolder\PowerUpQuestionBlock.cs" />
+    <Compile Include="Blocks\QuestionBlockFolder\AbstractQuestionBlock.cs" />
+    <Compile Include="Blocks\SolidBlockFolder\SolidBlock.cs" />
+    <Compile Include="Blocks\StairBlockFolder\StairBlock.cs" />
+    <Compile Include="Camera\PlayerFollowingCamera.cs" />
+    <Compile Include="Camera\CameraController.cs" />
+    <Compile Include="Camera\ICamera.cs" />
+    <Compile Include="Collision\AbstractCollisionHandler.cs" />
+    <Compile Include="Collision\CollisionDirection.cs" />
+    <Compile Include="Collision\CollisionDetector.cs" />
+    <Compile Include="Collision\EnemyBlockCollision\EnemyBlockCollisionHandler.cs" />
+    <Compile Include="Collision\EnemyBlockCollision\EnemyBlockCollisionResolution.cs" />
+    <Compile Include="Collision\EnemyEnemyCollision\EnemyEnemyCollisionHandler.cs" />
+    <Compile Include="Collision\EnemyEnemyCollision\EnemyEnemyCollisionResolution.cs" />
+    <Compile Include="Collision\EnemyEnemyCollision\KoopaShellEnemyCollisionResolution.cs" />
+    <Compile Include="Collision\EnemyFireballCollision\EnemyFireballCollisionHandler.cs" />
+    <Compile Include="Collision\EnemyFireballCollision\EnemyFireballCollisionResolution.cs" />
+    <Compile Include="Collision\EnemyPipeCollision\EnemyPipeCollisionHandler.cs" />
+    <Compile Include="Collision\EnemyPipeCollision\EnemyPipeCollisionResolution.cs" />
+    <Compile Include="Collision\FireBallPipeCollision\FireballBlockCollisionHandler.cs" />
+    <Compile Include="Collision\FireBallPipeCollision\FireballBlockCollisionResolution.cs" />
+    <Compile Include="Collision\FireBallBlockCollision\FireballBlockCollisionResolution.cs" />
+    <Compile Include="Collision\FireBallBlockCollision\FireballBlockCollisionHandler.cs" />
+    <Compile Include="Collision\GeneralCollisionHandler.cs" />
+    <Compile Include="Collision\ICollisionHandler.cs" />
+    <Compile Include="Collision\ICollidable.cs" />
+    <Compile Include="Collision\ItemBlockCollision\ItemBlockCollisionHandler.cs" />
+    <Compile Include="Collision\ItemBlockCollision\ItemBlockCollisionResolution.cs" />
+    <Compile Include="Collision\ItemPipeCollision\ItemPipeCollisionHandler.cs" />
+    <Compile Include="Collision\ItemPipeCollision\ItemPipeCollisionResolution.cs" />
+    <Compile Include="Collision\PlayerBlockCollision\PlayerBlockCollisionHandler.cs" />
+    <Compile Include="Collision\PlayerEnemyCollision\PlayerEnemyCollisionHandler.cs" />
+    <Compile Include="Collision\PlayerEnemyCollision\PlayerWithKoopaShell.cs" />
+    <Compile Include="Collision\PlayerFlagpoleCollision\PlayerFlagpoleCollisionHandler.cs" />
+    <Compile Include="Collision\PlayerFlagpoleCollision\PlayerFlagpoleCollisionResolution.cs" />
+    <Compile Include="Collision\PlayerItemCollision\PlayerItemCollisionHandler.cs" />
+    <Compile Include="Collision\PlayerPipeCollision\PlayerPipeCollisionHandler.cs" />
+    <Compile Include="Collision\PlayerBlockCollision\PlayerBrickBlockCollisionResolution.cs" />
+    <Compile Include="Collision\PlayerBlockCollision\PlayerGroundBlockCollisionResolution.cs" />
+    <Compile Include="Collision\PlayerItemCollision\PlayerBrownMushroomCollisionResolution.cs" />
+    <Compile Include="Collision\PlayerItemCollision\PlayerCoinCollisionResolution.cs" />
+    <Compile Include="Collision\PlayerItemCollision\PlayerFlowerCollisionResolution.cs" />
+    <Compile Include="Collision\PlayerEnemyCollision\PlayerWithGoomba.cs" />
+    <Compile Include="Collision\PlayerItemCollision\PlayerGreenMushroomCollisionResolution.cs" />
+    <Compile Include="Collision\PlayerBlockCollision\PlayerInvisibleBlockCollisionResolution.cs" />
+    <Compile Include="Collision\PlayerEnemyCollision\PlayerWithKoopa.cs" />
+    <Compile Include="Collision\PlayerPipeCollision\PlayerWithPipe.cs" />
+    <Compile Include="Collision\PlayerBlockCollision\PlayerQuestionBlockCollisionResolution.cs" />
+    <Compile Include="Collision\PlayerBlockCollision\PlayerSolidBlockCollisionResolution.cs" />
+    <Compile Include="Collision\PlayerBlockCollision\PlayerStairBlockCollisionResolution.cs" />
+    <Compile Include="Collision\PlayerItemCollision\PlayerStarCollisionResolution.cs" />
+    <Compile Include="Commands\CollectStarCommand.cs" />
+    <Compile Include="Commands\ResetCommand.cs" />
+    <Compile Include="Commands\ResetGameCommand.cs" />
+    <Compile Include="Commands\UnpauseCommand.cs" />
+    <Compile Include="Commands\PauseCommand.cs" />
+    <Compile Include="Commands\StandCommand.cs" />
+    <Compile Include="Commands\StopJumpingCommand.cs" />
+    <Compile Include="Commands\StopThrowingFireballCommand.cs" />
+    <Compile Include="Commands\ThrowFireballCommand.cs" />
+    <Compile Include="Commands\CollectMushroomCommand.cs" />
+    <Compile Include="Commands\CollectFlowerCommand.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Commands\ExitCommand.cs" />
+    <Compile Include="Commands\CrouchCommand.cs" />
+    <Compile Include="Controllers\MusicController.cs" />
+    <Compile Include="Enemies\Enemy.cs" />
+    <Compile Include="Enemies\EnemyStates\AbstractEnemy.cs" />
+    <Compile Include="Enemies\EnemyStates\GoombaState\FlippedGoombaState.cs" />
+    <Compile Include="Enemies\EnemyStates\GoombaState\Goomba.cs" />
+    <Compile Include="Enemies\EnemyStates\GoombaState\IGoombaState.cs" />
+    <Compile Include="Enemies\EnemyStates\GoombaState\LeftMovingGoombaState.cs" />
+    <Compile Include="Enemies\EnemyStates\IEnemy.cs" />
+    <Compile Include="Enemies\EnemyStates\KoopaShellState\FlippedKoopaShellState.cs" />
+    <Compile Include="Enemies\EnemyStates\KoopaShellState\IKoopaShellState.cs" />
+    <Compile Include="Enemies\EnemyStates\KoopaShellState\KoopaShell.cs" />
+    <Compile Include="Enemies\EnemyStates\KoopaState\IKoopaState.cs" />
+    <Compile Include="Enemies\EnemyStates\KoopaState\Koopa.cs" />
+    <Compile Include="Enemies\EnemyStates\KoopaShellState\LeftMovingKoopaShellState.cs" />
+    <Compile Include="Enemies\EnemyStates\KoopaState\LeftMovingKoopaState.cs" />
+    <Compile Include="Enemies\EnemyStates\GoombaState\RightMovingGoombaState.cs" />
+    <Compile Include="Enemies\EnemyStates\KoopaShellState\RightMovingKoopaShellState.cs" />
+    <Compile Include="Enemies\EnemyStates\KoopaState\RightMovingKoopaState.cs" />
+    <Compile Include="Enemies\EnemyStates\GoombaState\StompedGoombaState.cs" />
+    <Compile Include="Enemies\EnemyStates\KoopaShellState\StaticKoopaShellState.cs" />
+    <Compile Include="Enemies\Goomba.cs" />
+    <Compile Include="Enemies\IEnemy.cs" />
+    <Compile Include="Enemies\Koopa.cs" />
+    <Compile Include="Enemies\KoopaShell.cs" />
+    <Compile Include="GameManagers\GameManager.cs" />
+    <Compile Include="GameManagers\IGameState.cs" />
+    <Compile Include="GameManagers\PausedGameState.cs" />
+    <Compile Include="GameObjects\DeadMario.cs" />
+    <Compile Include="GameObjects\FireballExplosion.cs" />
+    <Compile Include="GameObjects\GameObject.cs" />
+    <Compile Include="GameObjects\IDrawable.cs" />
+    <Compile Include="GameObjects\IFlagpole.cs" />
+    <Compile Include="GameObjects\IMario.cs" />
+    <Compile Include="GameObjects\IPlayer.cs" />
+    <Compile Include="GameObjects\IProjectile.cs" />
+    <Compile Include="GameObjects\MarioStates\FireballThrowingState.cs" />
+    <Compile Include="GameObjects\MarioStates\IFireballThrowingState.cs" />
+    <Compile Include="GameObjects\MarioStates\NotThrowingFireballState.cs" />
+    <Compile Include="GameObjects\MarioStates\ThrowingFireballState.cs" />
+    <Compile Include="GameObjects\Projectile.cs" />
+    <Compile Include="GameObjects\IUpdatable.cs" />
+    <Compile Include="GameObjects\MarioStates\BigMarioState.cs" />
+    <Compile Include="GameObjects\Fireball.cs" />
+    <Compile Include="GameObjects\MarioStates\LeftActiveJumpingMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\LeftFallingMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\FireMarioState.cs" />
+    <Compile Include="GameObjects\Flagpole.cs" />
+    <Compile Include="GameObjects\IGameObject.cs" />
+    <Compile Include="Controllers\GamepadController.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Controllers\IController.cs" />
+    <Compile Include="GameObjects\MarioStates\HealthMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\IHealthState.cs" />
+    <Compile Include="GameObjects\MarioStates\IMovementState.cs" />
+    <Compile Include="GameObjects\MarioStates\LeftCrouchingMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\LeftFacingMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\LeftPassiveJumpingMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\LeftMovingMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\LeftToRightTransitionMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\MovementMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\RightActiveJumpingMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\RightFallingMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\RightToLeftTransitionMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\RightCrouchingMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\RightFacingMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\RightPassiveJumpingMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\RightMovingMarioState.cs" />
+    <Compile Include="GameObjects\MarioStates\SmallMarioState.cs" />
+    <Compile Include="GameObjects\StarMario.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Items\ICollectable.cs" />
+    <Compile Include="Items\IItem.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\SpawnedCoin.cs" />
+    <Compile Include="Levels\LevelManager.cs" />
+    <Compile Include="Pipes\IPipe.cs" />
+    <Compile Include="Pipes\LargePipe.cs" />
+    <Compile Include="Pipes\MediumPipe.cs" />
+    <Compile Include="Pipes\AbstractPipe.cs" />
+    <Compile Include="Pipes\SmallPipe.cs" />
+    <Compile Include="HeadsUpDisplay.cs" />
+    <Compile Include="Pipes\TeleportationPipe.cs" />
+    <Compile Include="ScoreBoard.cs" />
+    <Compile Include="Sound\SoundEffectManager.cs" />
+    <Compile Include="Sprites\Frame.cs" />
+    <Compile Include="Sprites\ISprite.cs" />
+    <Compile Include="Commands\JumpCommand.cs" />
+    <Compile Include="Controllers\KeyboardController.cs" />
+    <Compile Include="Commands\MoveLeftCommand.cs" />
+    <Compile Include="Commands\MoveRightCommand.cs" />
+    <Compile Include="Physics.cs" />
+    <Compile Include="GameObjects\Mario.cs" />
+    <Compile Include="MyGame.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Sprites\Sprite.cs" />
+    <Compile Include="Sprites\SpriteMachine.cs" />
+    <Compile Include="Items\BrownMushroom.cs" />
+    <Compile Include="Items\StaticCoin.cs" />
+    <Compile Include="Items\Flower.cs" />
+    <Compile Include="Items\SpeedBoostItem.cs" />
+    <Compile Include="Items\Star.cs" />
+    <Compile Include="GameManagers\UnpausedGameState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bg-4-1.png" />
+    <Content Include="Content\bg-6-1.png" />
+    <Content Include="Content\bg-6-2.png" />
+    <Content Include="Content\brickBlock.png" />
+    <Content Include="Content\brokenBrickBlock.png" />
+    <Content Include="Content\Levels.xml" />
+    <Content Include="Content\speedBoostItem.png" />
+    <Content Include="Content\pipe.png" />
+    <Content Include="Content\questionBlock.png" />
+    <Content Include="Content\solidBlock.png" />
+    <Content Include="Content\Sound\BackgroundMusic.mp3" />
+    <Content Include="Content\Sound\breakblock.wav" />
+    <Content Include="Content\Sound\bump.wav" />
+    <Content Include="Content\Sound\CollectCoin.wav" />
+    <Content Include="Content\Sound\EnterPipe.wav" />
+    <Content Include="Content\Sound\fireworks.wav" />
+    <Content Include="Content\Sound\GainExtraLife.wav" />
+    <Content Include="Content\Sound\gameover.wav" />
+    <Content Include="Content\Sound\Jump.wav" />
+    <Content Include="Content\Sound\JumpSlightly.wav" />
+    <Content Include="Content\Sound\kick.wav" />
+    <Content Include="Content\Sound\mariodie.wav" />
+    <Content Include="Content\Sound\pause.wav" />
+    <Content Include="Content\Sound\powerup.wav" />
+    <Content Include="Content\Sound\PowerUpAppears.wav" />
+    <Content Include="Content\Sound\stomp.wav" />
+    <Content Include="Content\Sound\ThrowFireball.wav" />
+    <Content Include="Content\Sound\TouchFlagpole.wav" />
+    <Content Include="Content\stairBlock.png" />
+    <Content Include="Content\Level1-1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\UndergrondLevel.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyXMLData\XMLData.csproj">
+      <Project>{3468f9ce-cef6-4211-95af-104fac62ceca}</Project>
+      <Name>XMLData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets" Condition="Exists('..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MonoGame.Framework.DesktopGL.3.7.1.189\build\MonoGame.Framework.DesktopGL.targets'))" />
+    <Error Condition="!Exists('..\packages\MonoGame.Content.Builder.3.7.0.9\build\MonoGame.Content.Builder.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MonoGame.Content.Builder.3.7.0.9\build\MonoGame.Content.Builder.targets'))" />
+  </Target>
+  <Import Project="..\packages\MonoGame.Content.Builder.3.7.0.9\build\MonoGame.Content.Builder.targets" Condition="Exists('..\packages\MonoGame.Content.Builder.3.7.0.9\build\MonoGame.Content.Builder.targets')" />
+</Project>

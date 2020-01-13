@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="XMLData.ObjectList">
+    <List>
+      <!--Testing Area-->
+      <Item>
+        <ItemName>GroundBlock4x15</ItemName>
+        <X>10</X>
+        <Y>200</Y>
+      </Item>
+      <Item>
+        <ItemName>GroundBlock4x15</ItemName>
+        <X>190</X>
+        <Y>200</Y>
+      </Item>
+      <Item>
+        <ItemName>Koopa</ItemName>
+        <X>160</X>
+        <Y>160</Y>
+      </Item>
+      <Item>
+        <ItemName>SpeedBoostItem</ItemName>
+        <X>120</X>
+        <Y>120</Y>
+      </Item>
+      <Item>
+        <ItemName>SpeedBoostQuestionBlock</ItemName>
+        <X>40</X>
+        <Y>100</Y>
+      </Item>
+      <!--End Of Test Area-->
+      <!--First Level-->
+
+      
+    </List>
+  </Asset>
+</XnaContent>
